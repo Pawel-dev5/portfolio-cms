@@ -1,0 +1,38 @@
+export default {
+    pl: {
+        title: 'React CMS Portfolio',
+        sidebarTitle: 'Portflio CMS',
+        description:
+            'React CMS do strony Portfolio, z opcjami CRUD',
+        dashboard: 'Panel główny',
+        components: 'Komponenty',
+        dropdown: 'Dropdown',
+        submenu: 'Poziom',
+        multiLevel: 'Wielopoziomowe menu',
+        collapsed: 'Zwiń menu',
+        rtl: 'EN',
+        image: 'Zdjęcie tła',
+        new: 'Nowy',
+        withPrefix: 'With Prefix',
+        withSuffix: 'With Suffix',
+        viewSource: 'Zobacz źródło',
+    },
+    en: {
+        title: 'React CMS Portfolio',
+        sidebarTitle: 'Portflio CMS',
+        description:
+            'React CMS for portfolio webside with CRUD options',
+        dashboard: 'Dashboard',
+        components: 'Components',
+        dropdown: 'Dropdown',
+        submenu: 'Submenu',
+        multiLevel: 'Multi Level',
+        collapsed: 'Collapsed',
+        rtl: 'PL',
+        image: 'Background image',
+        new: 'NEW',
+        withPrefix: 'With Prefix',
+        withSuffix: 'With Suffix',
+        viewSource: 'View Source',
+    },
+};

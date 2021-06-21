@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import firebase from 'firebase/app';
 import 'firebase/database';
-import { Header } from './components/Header';
+import messages from '../src/components/messages';
+import { IntlProvider } from 'react-intl';
+import Layout from '../src/components/Layout';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -28,7 +30,7 @@ function App() {
   const [lang, setLang] = useState({
     PL: true
   });
-
+  // Toggle language of read data from firebase
   const toggleLang = () => {
     setLang((prevState) => ({
       ...prevState,
@@ -38,7 +40,8 @@ function App() {
       return setTranslateData(data.EN)
     } else setTranslateData(data.PL)
   }
-  // READ DATA
+
+  // READ DATA FROM FIREBASE
   useEffect(() => {
     const ref = firebase.database().ref();
     ref.on("value", snapshot => {
@@ -53,6 +56,9 @@ function App() {
     return () => ref.off("value");
   }, []);
 
+  const [locale, setLocale] = useState('en');
+
+
   return (
     <>
       {appState.isLoading ? (
@@ -62,15 +68,9 @@ function App() {
           </div>
         </div>
       ) : (
-        <div className="App">
-          {/* <Menu className="container" data={translateData.main} toggleLang={toggleLang} /> */}
-          <Header data={translateData.main} />
-          {/* <AboutMe data={translateData.main} />
-          <Work data={translateData.resume} />
-          <Portfolio data={translateData.portfolio} />
-          <Tech data={translateData.resume} />
-          <Footer className="container" data={translateData} /> */}
-        </div>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <Layout setLocale={setLocale} data={translateData.main} />
+        </IntlProvider>
       )}
     </>
   )
