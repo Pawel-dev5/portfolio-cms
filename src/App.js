@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.scss';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import 'firebase/auth';
 import messages from '../src/components/messages';
 import { IntlProvider } from 'react-intl';
 import Layout from '../src/components/Layout';
@@ -27,15 +28,17 @@ function App() {
   })
   const [data, setData] = useState([]);
   const [translateData, setTranslateData] = useState([]);
+  const [toggledLang, setToggledLang] = useState(false); 
   const [lang, setLang] = useState({
     PL: true
   });
   // Toggle language of read data from firebase
-  const toggleLang = () => {
+  const toggleLang = (checked) => {
     setLang((prevState) => ({
       ...prevState,
       PL: !prevState.PL,
     }));
+    setToggledLang(checked)
     if (lang.PL === true) {
       return setTranslateData(data.EN)
     } else setTranslateData(data.PL)
@@ -69,7 +72,13 @@ function App() {
         </div>
       ) : (
         <IntlProvider locale={locale} messages={messages[locale]}>
-          <Layout setLocale={setLocale} data={translateData.main} />
+          <Layout 
+          setLocale={setLocale} 
+          data={translateData.main} 
+          setAppState={setAppState} 
+          toggleLang={toggleLang}
+          toggledLang={toggledLang}
+          />
         </IntlProvider>
       )}
     </>

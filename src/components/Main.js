@@ -15,31 +15,36 @@ const Main = ({
     handleRtlChange,
     handleImageChange,
     toggled,
-    data
+    data,
+    handleLogout,
+    toggleLang,
+    toggledLang
 }) => {
-
     return (
         <main>
-                <Switch>
-                    <Route exact path="/portfolio-cms">
-                        <>
-                            <Dashboard
-                                image={image}
-                                toggled={toggled}
-                                collapsed={collapsed}
-                                rtl={rtl}
-                                handleToggleSidebar={handleToggleSidebar}
-                                handleCollapsedChange={handleCollapsedChange}
-                                handleRtlChange={handleRtlChange}
-                                handleImageChange={handleImageChange}
-                                data={data}
-                            />
-                        </>
-                    </Route>
-                    <Route path="/portfolio-cms/components/Header">
-                        <Header data={data} />
-                    </Route>
-                </Switch>
+            <Switch>
+                <Route exact path="/">
+                    <>
+                        <Dashboard
+                            image={image}
+                            toggled={toggled}
+                            collapsed={collapsed}
+                            rtl={rtl}
+                            handleToggleSidebar={handleToggleSidebar}
+                            handleCollapsedChange={handleCollapsedChange}
+                            handleRtlChange={handleRtlChange}
+                            handleImageChange={handleImageChange}
+                            data={data}
+                            handleLogout={handleLogout}
+                            toggledLang={toggledLang}
+                            toggleLang={toggleLang}
+                        />
+                    </>
+                </Route>
+                <Route path="/components/Header">
+                    <Header data={data} />
+                </Route>
+            </Switch>
             <footer>
                 <div className="social-bagdes">
                     © 2021 made by{' '}

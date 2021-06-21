@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "./scss/main.scss";
 
 $sidebar-bg-color: #1d1d1d;
 $submenu-bg-color: rgba(255, 255, 255, 0.05);
@@ -8,12 +9,12 @@ $highlight-color: #d8d8d8;
 $icon-bg-color: rgba(255, 255, 255, 0.05);
 $icon-size: 35px;
 
-@import '~react-pro-sidebar/dist/scss/styles.scss';
+@import "~react-pro-sidebar/dist/scss/styles.scss";
 body {
   margin: 0;
   height: 100vh;
   color: #353535;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #root {
@@ -189,6 +190,6 @@ body {
     background: #ffd331;
   }
 }
-.menu-link-active{
-  color: red
+.menu-link-active {
+  color: red;
 }
