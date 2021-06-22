@@ -74,7 +74,7 @@ function App() {
         <IntlProvider locale={locale} messages={messages[locale]}>
           <Layout 
           setLocale={setLocale} 
-          data={translateData.main} 
+          data={translateData} 
           setAppState={setAppState} 
           toggleLang={toggleLang}
           toggledLang={toggledLang}

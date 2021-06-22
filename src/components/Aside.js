@@ -8,7 +8,7 @@ import {
     SidebarFooter,
     SidebarContent,
 } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaList, FaGithub } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem, FaGithub } from 'react-icons/fa';
 import sidebarBg from '../assets/bg1.jpg';
 import { NavLink } from "react-router-dom";
 
@@ -68,25 +68,48 @@ const Aside = ({
                             title={intl.formatMessage({ id: 'components' })}
                             icon={<FaGem />}
                         >
-                            <MenuItem>Navigation</MenuItem>
-                            <NavLink exact to="/components/Header" className="menu-link"
-                                activeClassName="menu-link-active">
-                                <MenuItem>Header</MenuItem>
-                            </NavLink>
-                            <MenuItem>About me</MenuItem>
-                        </SubMenu>
-                        <SubMenu title={intl.formatMessage({ id: 'multiLevel' })} icon={<FaList />}>
-                            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1 </MenuItem>
-                            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2 </MenuItem>
-                            <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3`}>
-                                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.1 </MenuItem>
-                                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.2 </MenuItem>
-                                <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3.3`}>
-                                    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
-                                    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
-                                    <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
-                                </SubMenu>
-                            </SubMenu>
+                            <MenuItem>
+                                <NavLink to="/components/Navigation" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Navigation
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/Header" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Header
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/AboutMe" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    About me
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/Footer" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Footer
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/Portfolio" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Portfolio
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/Tech" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Tech
+                                </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <NavLink to="/components/Work" className="menu-link"
+                                    activeClassName="menu-link-active">
+                                    Work
+                                </NavLink>
+                            </MenuItem>
                         </SubMenu>
                     </Menu>
                 </SidebarContent>

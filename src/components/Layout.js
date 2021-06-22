@@ -19,8 +19,9 @@ function Layout({ setLocale, data, toggleLang, toggledLang }) {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
-    console.log(user)
-    console.log(email)
+    // console.log(user)
+    // console.log(email)
+    
     const clearInputs = () => {
         setEmail('');
         setPassword('');

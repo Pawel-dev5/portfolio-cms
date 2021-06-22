@@ -2,9 +2,15 @@ import {
     Route,
     Switch,
 } from "react-router-dom";
+import { FaGithub } from 'react-icons/fa';
 import { Dashboard } from '../components/Dashboard';
 import { Header } from './Header';
-import { FaGithub } from 'react-icons/fa';
+import { Nav } from './Nav';
+import { AboutMe } from './AboutMe';
+import { Footer } from './Footer';
+import { Portfolio } from './Portfolio';
+import { Tech } from './Tech';
+import { Work } from './Work';
 
 const Main = ({
     collapsed,
@@ -42,7 +48,25 @@ const Main = ({
                     </>
                 </Route>
                 <Route path="/components/Header">
-                    <Header data={data} />
+                    <Header data={data.main} />
+                </Route>
+                <Route path="/components/Navigation">
+                    <Nav data={data.main} />
+                </Route>
+                <Route path="/components/AboutMe">
+                    <AboutMe data={data.main} />
+                </Route>
+                <Route path="/components/Footer">
+                    <Footer data={data.footer} />
+                </Route>
+                <Route path="/components/Portfolio">
+                    <Portfolio data={data.portfolio} />
+                </Route>
+                <Route path="/components/Tech">
+                    <Tech data={data.resume} />
+                </Route>
+                <Route path="/components/Work">
+                    <Work data={data.resume} />
                 </Route>
             </Switch>
             <footer>

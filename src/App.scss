@@ -85,6 +85,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    ul {
+      list-style-type: none;
+    }
     header {
       margin-bottom: 40px;
       border-bottom: 1px solid #efefef;
@@ -192,4 +195,8 @@ body {
 }
 .menu-link-active {
   color: red;
+}
+.tech-desc-container {
+  display: flex;
+  flex-wrap: wrap;
 }
