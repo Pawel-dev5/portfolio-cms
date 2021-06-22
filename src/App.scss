@@ -26,6 +26,50 @@ body {
   display: flex;
   position: relative;
 
+  .nav-container {
+    width: 40%;
+    .nav-box {
+      display: flex;
+      padding: 10px;
+      border-bottom: 1px solid black;
+      justify-content: space-between;
+    }
+    div:nth-last-child(1) {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      margin-top: 30px;
+      justify-content: space-between;
+      input {
+        text-transform: uppercase;
+        width: 70%;
+      }
+    }
+  }
+  svg {
+    padding: 0 10px 0 10px;
+  }
+
+  .header-form {
+    input {
+      border: 0;
+      border-bottom: 1px solid black;
+      height: 30px;
+      width: 30%;
+    }
+    textarea {
+      max-width: 99%;
+      min-width: 99%;
+      width: 99%;
+      min-height: 100px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 17px;
+      padding: 10px 20px 10px 20px;
+    }
+  }
+
   .btn-toggle {
     cursor: pointer;
     width: 35px;
