@@ -11,6 +11,9 @@ import Login from './Login';
 function Layout({ setLocale, data, toggleLang, toggledLang }) {
     const [rtl, setRtl] = useState(false);
     const [collapsed, setCollapsed] = useState(false);
+    const [collapsedSidebar, setCollapsedSidebar] = useState({
+        Zwin: true
+    });
     const [image, setImage] = useState(true);
     const [toggled, setToggled] = useState(false);
     const [user, setUser] = useState('');
@@ -21,7 +24,7 @@ function Layout({ setLocale, data, toggleLang, toggledLang }) {
 
     // console.log(user)
     // console.log(email)
-    
+
     const clearInputs = () => {
         setEmail('');
         setPassword('');
@@ -96,7 +99,14 @@ function Layout({ setLocale, data, toggleLang, toggledLang }) {
     authListener();
 
     const handleCollapsedChange = (checked) => {
-        setCollapsed(checked);
+        // setCollapsed(checked);
+        setCollapsedSidebar((prevState) => ({
+            ...prevState,
+            Zwin: !prevState.Zwin,
+        }))
+        if(collapsedSidebar.Zwin === true) {
+            return setCollapsed(true)
+        }else setCollapsed(false)
     };
 
     const handleRtlChange = (checked) => {
@@ -125,6 +135,9 @@ function Layout({ setLocale, data, toggleLang, toggledLang }) {
                             handleLogout={handleLogout}
                             setEmail={setEmail}
                             setUser={setUser}
+                            handleCollapsedChange={handleCollapsedChange}
+                            toggledLang={toggledLang}
+                            toggleLang={toggleLang}
                         />
                         <Main
                             image={image}

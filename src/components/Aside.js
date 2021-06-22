@@ -8,9 +8,10 @@ import {
     SidebarFooter,
     SidebarContent,
 } from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaGithub } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem, FaGithub, FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import sidebarBg from '../assets/bg1.jpg';
 import { NavLink } from "react-router-dom";
+import Switch from 'react-switch';
 
 const Aside = ({
     image,
@@ -18,6 +19,9 @@ const Aside = ({
     // rtl,
     toggled,
     handleToggleSidebar,
+    handleCollapsedChange,
+    toggledLang,
+    toggleLang
     // handleLogout
 }) => {
 
@@ -112,6 +116,35 @@ const Aside = ({
                             </MenuItem>
                         </SubMenu>
                     </Menu>
+                    <div className="block">
+                        <Switch
+                            height={16}
+                            width={30}
+                            checkedIcon={false}
+                            uncheckedIcon={false}
+                            onChange={toggleLang}
+                            checked={toggledLang}
+                            onColor="#219de9"
+                            offColor="#bbbbbb"
+                        />
+                        {!collapsed ? (
+                            <>
+                                {toggledLang ? (
+                                    <>
+                                        <span>Angielskia wersja językowa</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Polska wersja językowa</span>
+                                    </>
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                {''}
+                            </>
+                        )}
+                    </div>
                 </SidebarContent>
 
                 <SidebarFooter style={{ textAlign: 'center' }}>
@@ -133,6 +166,36 @@ const Aside = ({
                     </div>
                 </SidebarFooter>
             </ProSidebar>
+            {/* <div className="collapse-icon" >
+                {!collapsed ? (
+                    <div>
+                        <FaChevronLeft
+                            height={16}
+                            width={30}
+                            checkedIcon={false}
+                            uncheckedIcon={false}
+                            onClick={handleCollapsedChange}
+                            checked={collapsed}
+                            onColor="#219de9"
+                            offColor="#bbbbbb"
+                        />
+                    </div>
+                ) : (
+                    <div>
+                        <FaChevronRight
+                            height={16}
+                            width={30}
+                            checkedIcon={false}
+                            uncheckedIcon={false}
+                            onClick={handleCollapsedChange}
+                            checked={collapsed}
+                            onColor="#219de9"
+                            offColor="#bbbbbb"
+                        />
+                    </div>
+                )}
+            </div> */}
+
             {/* <NavLink exact to="/" className="menu-link"
                 activeClassName="menu-link-active" >
                 <button onClick={handleLogout} className="LogOutButton">Wyloguj</button>
