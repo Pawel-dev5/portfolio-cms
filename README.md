@@ -1,3 +1,28 @@
+## Used libraries
+firebase,
+bootstrap,
+gulp,
+gulp-sourcemaps,
+create-react-app,
+hooks,
+react-icons,
+react-intl,
+react-pro-sidebar,
+react-switch,
+node-sass
+
+# To working google firebase you must create .env.local/.env file in project folder with data like below:
+
+REACT_APP_USER_ID="your key".\
+REACT_APP_FIREBASE_API_KEY="your key".\
+REACT_APP_FIREBASE_AUTH_DOMAIN="your key".\
+REACT_APP_FIREBASE_DATABASE_URL="your key".\
+REACT_APP_FIREBASE_PROJECT_ID="your key".\
+REACT_APP_FIREBASE_STORAGE_BUCKET="your key".\
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID="your key".\
+REACT_APP_FIREBASE_APP_ID="your key".\
+REACT_APP_FIREBASE_MEASURMENT_ID="your key".\
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

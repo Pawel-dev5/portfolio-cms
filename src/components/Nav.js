@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import { useState } from 'react';
 import { AiFillDelete, AiFillFileAdd } from 'react-icons/ai';
 
-export const Nav = ({ data }) => {
+export const Nav = ({ data, fireChangeLang }) => {
     const [menu, setMenu] = useState(data.menu);
     const [title, setTitle] = useState('');
 
@@ -14,6 +14,7 @@ export const Nav = ({ data }) => {
 
     const createTodo = () => {
         const ref = firebase.database().ref('PL' + '/main').child("menu");
+        // const ref = firebase.database().ref(fireChangeLang + '/main').child("menu");
         const meniItem = {
             name: title,
             id: menu.length + 1,
@@ -23,21 +24,24 @@ export const Nav = ({ data }) => {
         updates[postID] = meniItem;
         setMenu([...menu, meniItem])
         ref.update(updates)
+        setMenu(data.menu)
     };
-
+    
     const deleteTodo = (id) => {
         const ref = firebase.database().ref('PL' + '/main' + '/menu').child(id);
+        // const ref = firebase.database().ref(fireChangeLang + '/main' + '/menu').child(id);
         ref.remove();
+        setMenu(data.menu)
     };
 
     return (
         <>
             <div className="nav-container">
                 <ul>
-                    {data.menu.map((item, id) => {
+                    {menu.map((item, id) => {
                         return (
-                            <div className="nav-box">
-                                <li key={id}>{item.name}</li>
+                            <div className="nav-box" key={id}>
+                                <li >{item.name}</li>
                                 <AiFillDelete onClick={() => deleteTodo(id)} />
                             </div>
                         )

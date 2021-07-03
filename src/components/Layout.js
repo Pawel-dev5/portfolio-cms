@@ -8,7 +8,7 @@ import 'firebase/auth';
 import { Route } from "react-router-dom";
 import Login from './Login';
 
-function Layout({ setLocale, data, toggleLang, toggledLang }) {
+function Layout({ setLocale, data, toggleLang, toggledLang, fireChangeLang }) {
     const [rtl, setRtl] = useState(false);
     const [collapsed, setCollapsed] = useState(false);
     const [collapsedSidebar, setCollapsedSidebar] = useState({
@@ -140,6 +140,7 @@ function Layout({ setLocale, data, toggleLang, toggledLang }) {
                             toggleLang={toggleLang}
                         />
                         <Main
+                        fireChangeLang={fireChangeLang}
                             image={image}
                             toggled={toggled}
                             collapsed={collapsed}

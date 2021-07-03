@@ -56,7 +56,7 @@ const Aside = ({
 
                 <SidebarContent >
                     <Menu iconShape="circle">
-                        <NavLink exact to="/" className="menu-link"
+                        <NavLink to="/" className="menu-link"
                             activeClassName="menu-link-active">
                             <MenuItem
                                 icon={<FaTachometerAlt />}
@@ -73,43 +73,43 @@ const Aside = ({
                             icon={<FaGem />}
                         >
                             <MenuItem>
-                                <NavLink to="/components/Navigation" className="menu-link"
+                                <NavLink to="/components/Navigation/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Navigation
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/Header" className="menu-link"
+                                <NavLink exact to="/components/Header/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Header
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/AboutMe" className="menu-link"
+                                <NavLink to="/components/AboutMe/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     About me
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/Footer" className="menu-link"
+                                <NavLink to="/components/Footer/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Footer
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/Portfolio" className="menu-link"
+                                <NavLink to="/components/Portfolio/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Portfolio
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/Tech" className="menu-link"
+                                <NavLink to="/components/Tech/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Tech
                                 </NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/components/Work" className="menu-link"
+                                <NavLink to="/components/Work/" className="menu-link"
                                     activeClassName="menu-link-active">
                                     Work
                                 </NavLink>

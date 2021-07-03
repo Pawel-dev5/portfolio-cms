@@ -12,16 +12,13 @@ export const AboutMe = ({ data }) => {
         shortBio: data.shortBio,
         phone: data.phone
     })
-
     const handleOnChangeSum = (e) => {
-
         const { name, value } = e.target;
         setSumDat({
             ...sumDat,
-            [name]: value,
+            [name]: value
         });
     };
-
     const completeHeader = () => {
         const ref = firebase.database().ref('PL').child("main");
         ref.update({
@@ -35,6 +32,7 @@ export const AboutMe = ({ data }) => {
             email: sumDat.email,
         });
     };
+    
     return (
         <>
             <form className="header-form" onSubmit={completeHeader} >

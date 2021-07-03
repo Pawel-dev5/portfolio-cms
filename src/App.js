@@ -23,26 +23,17 @@ if (!firebase.apps.length) {
 }
 
 function App() {
+  const [locale, setLocale] = useState('en');
   const [appState, setAppState] = useState({
     isLoading: true
   })
   const [data, setData] = useState([]);
   const [translateData, setTranslateData] = useState([]);
-  const [toggledLang, setToggledLang] = useState(false); 
+  const [toggledLang, setToggledLang] = useState(false);
   const [lang, setLang] = useState({
     PL: true
   });
-  // Toggle language of read data from firebase
-  const toggleLang = (checked) => {
-    setLang((prevState) => ({
-      ...prevState,
-      PL: !prevState.PL,
-    }));
-    setToggledLang(checked)
-    if (lang.PL === true) {
-      return setTranslateData(data.EN)
-    } else setTranslateData(data.PL)
-  }
+  const [fireChangeLang, setFireChangeLang] = useState('EN');
 
   // READ DATA FROM FIREBASE
   useEffect(() => {
@@ -59,7 +50,26 @@ function App() {
     return () => ref.off("value");
   }, []);
 
-  const [locale, setLocale] = useState('en');
+  // Toggle language of read data from firebase
+  const toggleLang = (checked) => {
+    setLang((prevState) => ({
+      ...prevState,
+      PL: !prevState.PL,
+    }));
+    setToggledLang(checked)
+    if (lang.PL === true) {
+      setTranslateData(data.EN)
+    } else setTranslateData(data.PL)
+    // FIREBASE OPERATION CHANGING LANGUAGE FUNCTION
+    // console.log(toggledLang)
+    // if (toggledLang) {
+    //   setFireChangeLang('EN')
+    //   console.log(fireChangeLang)
+    // } else {
+    //   setFireChangeLang('PL')
+    //   console.log(fireChangeLang)
+    // }
+  }
 
 
   return (
@@ -72,12 +82,13 @@ function App() {
         </div>
       ) : (
         <IntlProvider locale={locale} messages={messages[locale]}>
-          <Layout 
-          setLocale={setLocale} 
-          data={translateData} 
-          setAppState={setAppState} 
-          toggleLang={toggleLang}
-          toggledLang={toggledLang}
+          <Layout
+            setLocale={setLocale}
+            data={translateData}
+            setAppState={setAppState}
+            toggleLang={toggleLang}
+            toggledLang={toggledLang}
+            fireChangeLang={fireChangeLang}
           />
         </IntlProvider>
       )}

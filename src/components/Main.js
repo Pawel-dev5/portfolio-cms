@@ -24,7 +24,8 @@ const Main = ({
     data,
     handleLogout,
     toggleLang,
-    toggledLang
+    toggledLang,
+    fireChangeLang
 }) => {
     return (
         <main>
@@ -51,7 +52,7 @@ const Main = ({
                     <Header data={data.main} />
                 </Route>
                 <Route path="/components/Navigation">
-                    <Nav data={data.main} />
+                    <Nav data={data.main} toggledLang={toggledLang} fireChangeLang={fireChangeLang} />
                 </Route>
                 <Route path="/components/AboutMe">
                     <AboutMe data={data.main} />
