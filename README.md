@@ -1,17 +1,18 @@
 ## Used libraries
-firebase,
-bootstrap,
-gulp,
-gulp-sourcemaps,
-create-react-app,
-hooks,
-react-icons,
-react-intl,
-react-pro-sidebar,
-react-switch,
-node-sass
 
-# To working google firebase you must create .env.local/.env file in project folder with data like below:
+    firebase,
+    bootstrap,
+    gulp,
+    gulp-sourcemaps,
+    create-react-app,
+    hooks,
+    react-icons,
+    react-intl,
+    react-pro-sidebar,
+    react-switch,
+    node-sass
+
+## To working google firebase you must create .env.local/.env file in project folder with data like below:
 
 REACT_APP_USER_ID="your key".\
 REACT_APP_FIREBASE_API_KEY="your key".\
