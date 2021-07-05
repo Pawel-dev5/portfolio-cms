@@ -27,7 +27,7 @@ body {
   position: relative;
 
   .nav-container {
-    width: 40%;
+    width: 60%;
     .nav-box {
       display: flex;
       padding: 10px;
@@ -42,8 +42,8 @@ body {
       justify-content: space-between;
       input {
         text-transform: uppercase;
-        width: 70%;
       }
+      width: 70%;
     }
   }
   svg {
@@ -57,12 +57,12 @@ body {
       border: 0;
       border-bottom: 1px solid black;
       height: 30px;
-      width: 50%;
+      width: 70%;
     }
     textarea {
-      max-width: 99%;
-      min-width: 99%;
-      width: 99%;
+      max-width: 70%;
+      min-width: 70%;
+      width: 70%;
       min-height: 100px;
       margin-bottom: 20px;
     }
@@ -127,7 +127,7 @@ body {
   }
 
   main {
-    padding: 24px;
+    padding: 30px 40px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -259,4 +259,24 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 5px;
+}
+.MuiTableCell-alignLeft:nth-child(5) > div {
+  font-size: 12px;
+}
+.MuiTableCell-alignLeft > div {
+  max-width: 300px;
+  font-size: 14px;
+}
+.MuiTableCell-paddingNone {
+  width: 1%;
+}
+tbody > tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+tbody > tr:hover {
+  background-color: #c6c8ca;
+}
+thead > tr > th:nth-child(2) {
+  text-align: left !important;
+  padding-left: 20px;
 }

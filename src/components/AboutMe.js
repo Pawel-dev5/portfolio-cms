@@ -9,7 +9,6 @@ export const AboutMe = ({ data }) => {
         employer: data.employer,
         title: data.title,
         biopriv: data.biopriv,
-        shortBio: data.shortBio,
         phone: data.phone
     })
     const handleOnChangeSum = (e) => {
@@ -23,7 +22,6 @@ export const AboutMe = ({ data }) => {
         const ref = firebase.database().ref('PL').child("main");
         ref.update({
             biopriv: sumDat.biopriv,
-            shortBio: sumDat.shortBio,
             title: sumDat.title,
             employer: sumDat.employer,
             phone: sumDat.phone,
@@ -40,7 +38,6 @@ export const AboutMe = ({ data }) => {
                 <input type="text" onChange={handleOnChangeSum} value={sumDat.title} name="title" />
                 <h3>About Me Bio:</h3>
                 <textarea type="text" onChange={handleOnChangeSum} value={sumDat.biopriv} name="biopriv" />
-                <textarea type="text" onChange={handleOnChangeSum} value={sumDat.shortBio} name="shortBio" />
                 <h3>Zatrudniony:</h3>
                 <input type='text' onChange={handleOnChangeSum} value={sumDat.employer} name="employer" />
                 <h3>Telefon:</h3>

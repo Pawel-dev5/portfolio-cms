@@ -10,7 +10,7 @@ import Login from './Login';
 
 function Layout({ setLocale, data, toggleLang, toggledLang, fireChangeLang }) {
     const [rtl, setRtl] = useState(false);
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
     const [collapsedSidebar, setCollapsedSidebar] = useState({
         Zwin: true
     });
