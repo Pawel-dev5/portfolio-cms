@@ -260,8 +260,10 @@ body {
   align-items: center;
   margin-top: 5px;
 }
-.MuiTableCell-alignLeft:nth-child(5) > div {
+
+.MuiTableCell-alignLeft:nth-child(5) {
   font-size: 12px;
+  min-width: 300px;
 }
 .MuiTableCell-alignLeft > div {
   max-width: 300px;
